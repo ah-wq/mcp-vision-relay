@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2025-11-02T21:11:27.427489",
+    "type": "claude_commit",
+    "commit_message": "Claude git commit",
+    "analysis": {
+      "changed_files": [
+        ".gitattributes"
+      ],
+      "change_types": {
+        "feature": 1,
+        "bugfix": 0,
+        "refactor": 0,
+        "docs": 0,
+        "test": 0,
+        "config": 0
+      },
+      "commit_intent": "general",
+      "potential_impact": "low",
+      "risk_assessment": {
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "risk_factors": []
+      }
+    },
+    "project_state": {
+      "framework": "unknown",
+      "language": "unknown",
+      "total_files": 0
+    }
+  }
+]
