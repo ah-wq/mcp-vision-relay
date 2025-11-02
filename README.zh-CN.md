@@ -2,6 +2,8 @@
 
 [English](README.md) | [中文说明](README.zh-CN.md)
 
+One-line summary: MCP Vision Relay wraps local Gemini/Qwen multimodal CLIs into a unified MCP tool so text-only models can instantly gain vision skills.
+
 MCP Vision Relay 是一个面向 Claude、Codex 等 MCP 客户端的视觉“中继站”，把本地安装的多模态 CLI（目前支持 Google Gemini CLI 与 Qwen CLI）统一成标准的 MCP 工具。
 
 > **为什么需要它？** Claude Code 如果对接 k2、DeepSeek、MiniMax M2 等文本模型时，本身不具备多模态能力。接入 MCP Vision Relay 后，可借助 Gemini/Qwen CLI 来补齐看图能力，在不更换底层模型的情况下实现“物美价廉”的体验。
@@ -35,13 +37,15 @@ npm run start
 启动后会通过 stdio 暴露 MCP 服务，可配合 `claude mcp add`、`codex mcp add` 使用。
 
 ## 与 MCP 客户端集成示例
+> ⚠️ 注册 MCP 客户端时请直接调用入口。命令里使用 `npm run dev` 会输出 npm 横幅到 stdout，导致 MCP 握手失败。如需保留 npm 脚本，请改为 `npm --silent run dev --`。
+
 ### Claude CLI
 ```bash
-claude mcp add mcp-vision-relay -- npm run dev --prefix /absolute/path/to/mcp-vision-relay
+claude mcp add mcp-vision-relay -- npx tsx /absolute/path/to/mcp-vision-relay/src/index.ts
 ```
 ### Codex CLI
 ```bash
-codex mcp add mcp-vision-relay npm run dev --prefix /absolute/path/to/mcp-vision-relay
+codex mcp add mcp-vision-relay -- node /absolute/path/to/mcp-vision-relay/dist/index.js
 ```
 
 注册完成后，在对应会话中即可使用 `mcp-vision-relay` 的工具。

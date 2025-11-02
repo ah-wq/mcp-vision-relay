@@ -36,13 +36,15 @@ npm run start
 服务器通过 stdio 与 MCP 客户端通信，适用于 `claude mcp add`、`codex mcp add` 等命令。
 
 ## MCP Integration Examples
+> ⚠️ When registering the server with an MCP client, invoke the entry point directly. Running `npm run dev` inside the registration command causes npm to print a banner on stdout, which breaks the MCP handshake. If you must keep the npm script, wrap it with `npm --silent run dev --` so no extra text reaches stdout.
+
 ### Claude
 ```bash
-claude mcp add mcp-vision-relay -- npm run dev --prefix /absolute/path/to/mcp-vision-relay
+claude mcp add mcp-vision-relay -- npx tsx /absolute/path/to/mcp-vision-relay/src/index.ts
 ```
 ### Codex CLI
 ```bash
-codex mcp add mcp-vision-relay npm run dev --prefix /absolute/path/to/mcp-vision-relay
+codex mcp add mcp-vision-relay -- node /absolute/path/to/mcp-vision-relay/dist/index.js
 ```
 完成后即可在会话/任务中选择 `mcp-vision-relay` 的工具调用。
 
