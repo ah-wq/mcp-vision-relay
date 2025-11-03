@@ -4,6 +4,10 @@
 
 MCP Vision Relay 将本地安装的多模态 CLI（目前支持 Google Gemini CLI 与 Qwen CLI）封装为 Model Context Protocol (MCP) 服务器，帮助 Claude、Codex 等支持 MCP 的工具直接使用它们的看图能力。
 
+<a href="https://glama.ai/mcp/servers/@ah-wq/mcp-vision-relay">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@ah-wq/mcp-vision-relay/badge" alt="Vision Relay MCP server" />
+</a>
+
 > **Why it matters:** when Claude Code connects to providers such as k2, DeepSeek, or MiniMax M2, the backing models today are text-only—no built-in vision. By relaying calls through Gemini/Qwen CLI, MCP Vision Relay gives those deployments an inexpensive path to regain multimodal features without switching providers.
 
 ## Features
