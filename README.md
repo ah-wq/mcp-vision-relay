@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/ah-wq-mcp-vision-relay-badge.png)](https://mseep.ai/app/ah-wq-mcp-vision-relay)
+
 # MCP Vision Relay
 
 [English](README.md) | [中文说明](README.zh-CN.md)
